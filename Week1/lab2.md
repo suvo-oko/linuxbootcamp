@@ -117,4 +117,4 @@ In the image below we can see the output for both commands.
 
 ![az vm get-instance-view and az vm start](images/azvmgetinstance.png)
 
-To stop a VM, we run the `az vm stop` command. Please bear in mind that the VM will continue to be billed.
+To stop a VM, we run the `az vm stop` command. Please bear in mind that you will continue to be billed.

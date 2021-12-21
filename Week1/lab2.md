@@ -71,7 +71,7 @@ This will deploy an 8 GB RAM, 2 cores Ubuntu VM.
 
 ### Resizing an existing VM
 
-After a VM has been deployed, it can be resized to increase or decrease resource allocation. You can view the current of size of a VM with `az vm show`. Let's see the size of that Groovy Ubuntu Server we just created.
+After a VM has been deployed, it can be resized to increase or decrease resource allocation. You can view the current size of a VM with `az vm show`. Let's see the size of that Groovy Ubuntu Server we just created.
 
 `az vm show -g cloudskillsrg -n UbuntuVM2 --query hardwareProfile.vmSize`
 
@@ -118,3 +118,9 @@ In the image below we can see the output for both commands.
 ![az vm get-instance-view and az vm start](images/azvmgetinstance.png)
 
 To stop a VM, we run the `az vm stop` command. Please bear in mind that you will continue to be billed.
+
+## Deleting the resources
+
+When you're done with the labs, don't forget to delete the resource group. You don't want any extras charges to your subscription. To completely remove the resource group, we run `az group delete`. Use the `--no-wait` parameter if you want to continue working on the terminal, while the command runs in the background. You'll be asked if you really want to go on with the operation. OR you can simply add the `-y` flag.
+
+`az group delete -n cloudskillsrg --no-wait -y`

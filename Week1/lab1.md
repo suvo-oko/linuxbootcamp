@@ -39,7 +39,7 @@ The output will also give you the VM's public IP address, that you'll use later 
 
 If by any chance you didn't write down the public IP address, you can see it by running this command:
 
-`az vm list-ip-addresses -g cloudskills -n UbuntuVM1`
+`az vm list-ip-addresses -g cloudskillsrg -n UbuntuVM1`
 
 ## Open port 80 for web traffic
 

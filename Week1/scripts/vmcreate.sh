@@ -25,12 +25,21 @@ az vm create \
     --data-disk-sizes-gb 128
 
 echo $vmname created
-echo your admin username is $username
 
 # Open port 80 to web traffic
 echo Opening port 80 to web traffic
 
 az vm open-port --port 80 --resource-group $rgname --name $vmname
+
+publicip=$(az vm list-ip-addresses \ 
+    -g $rgname \ 
+    -n $vmname \ 
+    --query "[].virtualMachine.network.publicIpAddresses[0].ipAddress" \ 
+    -o tsv)
+
+echo $vmname is running and ready to be used.
+echo Your admin username is $username.
+echo $vmname public IP address is $publicip. Save this information.
 
 echo END
 

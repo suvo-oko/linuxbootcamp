@@ -1,28 +1,28 @@
 #!/bin/bash
 
-# Update Package Index
+# Update package index
 sudo apt update
 
-# Install Apache2, MySQL, PHP
-sudo apt install apache2 mysql-server php php-mysql libapache2-mod-php php-cli -y
+# Install LAMP stack
+sudo apt install lamp-server^ -y
 
-# Allow to run Apache on boot up
+# Set Apache to run on bootup
 sudo systemctl enable apache2
 
-# Restart Apache Web Server 
+# Restart Apache web server
 sudo systemctl start apache2
 
-# Adjust Firewall
+# Adjust firewall
 sudo ufw allow in "Apache Full"
 
-# Allow Read/Write for Owner
+# Allow read/write permissions for owner
 sudo chmod -R 0755 /var/www/html/
 
-# Secure MySQL and set root pwd
+# Secure MySQL and set root password
 sudo mysql_secure_installation
 
 # Validate login to MySQL
 sudo mysql -u root -p
 
-# Create info.php for testing php processing
+# Create PHP info page
 sudo sh -c 'echo "<?php phpinfo(); ?>" > /var/www/html/info.php'

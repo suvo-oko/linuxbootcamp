@@ -36,13 +36,13 @@ To install WordPress we run the following command:
 
 ## Configure WordPress
 
-I create a SQL file called `wordpress.sql` to configure the MySQL database for wordpress. I used Nano to edit the file.
+I created a SQL file called `wordpress.sql` to configure the MySQL database for wordpress. I used Nano to edit the file.
 
 `sudo nano wordpress.sql`
 
 You can see the file [here](scripts/wordpress.sql).
 
-We'll now pipe the contents of this file to the `debian.cnf` file, where the database settings will be stored.
+We'll now use this SQL file and pipe it to `debian.cnf`. This is a configuration file.
 
 `cat wordpress.sql | sudo mysql --defaults-extra-file=/etc/mysql/debian.cnf`
 
